@@ -3,7 +3,7 @@ Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
 Summary(pl):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
 Version:	1.87
-Release:	0.1
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -60,19 +60,19 @@ ogólna.
 	INSTALLDIRS=vendor
 %{__make} \
 	OPTIMIZE="%{rpmcflags}" \
-	COMPILER="%{__cc} -DACEDB4 %{rpmcflags}"
+	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC"
 cd RPC
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
 	OPTIMIZE="%{rpmcflags}" \
-	COMPILER="%{__cc} -DACEDB4 %{rpmcflags}"
+	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC"
 cd ../Freesubs
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
 	OPTIMIZE="%{rpmcflags}" \
-	COMPILER="%{__cc} -DACEDB4 %{rpmcflags}"
+	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -89,7 +89,7 @@ cd ../Freesubs
 cd ..
 
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/httpd,/home/httpd/{cgi-bin,html}}/ace
+install -d $RPM_BUILD_ROOT{%{_sysconfdir}/httpd,/home/services/httpd/{cgi-bin,html}}/ace
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -100,23 +100,28 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ace.pl
 %{perl_vendorlib}/Ace.pm
 %dir %{perl_vendorlib}/Ace
-%{perl_vendorlib}/Ace/[^B]*
+%{perl_vendorlib}/Ace/[!B]*
 %{perl_vendorlib}/GFF
 %{perl_vendorlib}/auto/Ace
 %dir %{perl_vendorarch}/Ace
 %{perl_vendorarch}/Ace/*.pm
 %dir %{perl_vendorarch}/auto/Ace
-%{perl_vendorarch}/auto/Ace/*
+%dir %{perl_vendorarch}/auto/Ace/Freesubs
+%{perl_vendorarch}/auto/Ace/Freesubs/Freesubs.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Ace/Freesubs/Freesubs.so
+%dir %{perl_vendorarch}/auto/Ace/RPC
+%{perl_vendorarch}/auto/Ace/RPC/RPC.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Ace/RPC/RPC.so
 %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man1/ace.pl*
 %{_mandir}/man3/Ace.3pm*
-%{_mandir}/man3/Ace::[^B]*
+%{_mandir}/man3/Ace::[!B]*
 
 %files -n perl-AceBrowser
 %defattr(644,root,root,755)
 %doc README.ACEBROWSER
 %dir %{_sysconfdir}/httpd/ace
-%dir /home/httpd/cgi-bin/ace
-%dir /home/httpd/html/ace
+%dir /home/services/httpd/cgi-bin/ace
+%dir /home/services/httpd/html/ace
 %{perl_vendorlib}/Ace/Browser
 %{_mandir}/man3/Ace::B*
