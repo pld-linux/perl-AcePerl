@@ -3,14 +3,14 @@ Summary:	AcePerl perl module
 Summary(pl):	Modu³ perla AcePerl
 Name:		perl-AcePerl
 Version:	1.67
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Ace/AcePerl-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Digest-MD5
 %requires_eq	perl
 Requires:	%{perl_sitearch}
@@ -45,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,README}.gz
+%doc *.gz
 
 %{perl_sitearch}/Ace.pm
 %{perl_sitearch}/GFF
