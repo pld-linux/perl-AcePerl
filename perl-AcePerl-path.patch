@@ -1,0 +1,175 @@
+diff -burN AcePerl-1.86.orig/acebrowser/cgi-bin/moviedb/person AcePerl-1.86/acebrowser/cgi-bin/moviedb/person
+--- AcePerl-1.86.orig/acebrowser/cgi-bin/moviedb/person	Tue Sep 25 05:06:39 2001
++++ AcePerl-1.86/acebrowser/cgi-bin/moviedb/person	Thu Jul 24 17:09:47 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ # -*- Mode: perl -*-
+ # file: person
+ # Moviedb "person" display
+diff -burN AcePerl-1.86.orig/docs/ACE_SERVER_TRAPS.HOWTO AcePerl-1.86/docs/ACE_SERVER_TRAPS.HOWTO
+--- AcePerl-1.86.orig/docs/ACE_SERVER_TRAPS.HOWTO	Thu Jul 22 19:11:23 1999
++++ AcePerl-1.86/docs/ACE_SERVER_TRAPS.HOWTO	Thu Jul 24 17:09:48 2003
+@@ -120,7 +120,7 @@
+       Consequences of the Solution
+       
+    The NOTES file distributed with this version of ACEDB advises you to
+-   move the acedb and textace scripts to /usr/local/bin, and using them
++   move the acedb and textace scripts to /usr/bin, and using them
+    to start the program. With your environment variables in place, you
+    can simply use xace or tace instead.
+    
+@@ -150,7 +150,7 @@
+    individual user names instead.
+    
+    One thing that no documentation mentions is that we had to move
+-   gifaceserver.LINUX to /usr/local/bin/gifaceserver. Obvious, but still
++   gifaceserver.LINUX to /usr/bin/gifaceserver. Obvious, but still
+    makes you wonder while you do it.
+    
+     Inetd.conf
+@@ -167,7 +167,7 @@
+    whom the gifaceserver is assigned in the inetd.conf file. We created
+    one by opening the gifaceserver on a fake port number (12345):
+    
+-   /usr/local/bin/gifaceserver /home/httpd/database/contacts 12345
++   /usr/bin/gifaceserver /home/httpd/database/contacts 12345
+    1200:1200:10
+    
+ Models
+diff -burN AcePerl-1.86.orig/docs/ACE_SERVER_TRAPS.HOWTO.html AcePerl-1.86/docs/ACE_SERVER_TRAPS.HOWTO.html
+--- AcePerl-1.86.orig/docs/ACE_SERVER_TRAPS.HOWTO.html	Thu Jul 22 19:11:23 1999
++++ AcePerl-1.86/docs/ACE_SERVER_TRAPS.HOWTO.html	Thu Jul 24 17:09:48 2003
+@@ -73,7 +73,7 @@
+ <em>/home/httpd/database/contacts/</em></p>
+ 
+ <p><h5>Consequences of the Solution</h5></p>
+-<p>The <strong>NOTES</strong> file distributed with this version of ACEDB advises you to move the <em>acedb</em> and <em>textace</em> scripts to /usr/local/bin, and using them to start the program.  With your environment variables in place, you can simply use <em>xace</em> or <em>tace</em> instead.</p>
++<p>The <strong>NOTES</strong> file distributed with this version of ACEDB advises you to move the <em>acedb</em> and <em>textace</em> scripts to /usr/bin, and using them to start the program.  With your environment variables in place, you can simply use <em>xace</em> or <em>tace</em> instead.</p>
+ 
+ <p><h4>Permissions</h4></p>
+ <p>Take your permissions seriously.  Richard Durbin's Installation Guide is out of date, but gives good advice in this department.</p>
+@@ -84,13 +84,13 @@
+ <p><h4>Solution</h4></p>
+ <p>The best installation information is in the <strong>README</strong> file for <em>AcePerl-1.54</em>.  A few more hints are listed here.</p>
+ <p>The <em>AcePerl</em> <strong>README</strong> file implies creating a user called <em>acedb</em>.  This creates permissions problems that we haven't solved yet.  We are using individual user names instead.</p>
+-<p>One thing that <strong>no</strong> documentation mentions is that we had to move <em>gifaceserver.LINUX</em> to <em>/usr/local/bin/gifaceserver</em>.  Obvious, but still makes you wonder while you do it.</p>
++<p>One thing that <strong>no</strong> documentation mentions is that we had to move <em>gifaceserver.LINUX</em> to <em>/usr/bin/gifaceserver</em>.  Obvious, but still makes you wonder while you do it.</p>
+ <p><h4>Inetd.conf</h4></p>
+ <p>Our individual <em>inetd.conf</em> files were completely commented out, and the daemon stopped because of our dispersed locations.  Append the required line to the file, and enter:</p>
+ <p><em>Killall -HUP inetd</em></p>
+ <p><h4>server.log</h4></p>
+ <p>The server really wants a <em>server.log</em> file, writable by the user to whom the <em>gifaceserver</em> is assigned in the <em>inetd.conf</em> file.  We created one by opening the <em>gifaceserver</em> on a fake port number (12345):</p>
+-<p><em> /usr/local/bin/gifaceserver /home/httpd/database/contacts 12345 1200:1200:10</em></p> 
++<p><em> /usr/bin/gifaceserver /home/httpd/database/contacts 12345 1200:1200:10</em></p> 
+ <p><h2>Models</h2></p>
+ <p><h3>Documentation</h3></p>
+ The <strong>best</strong> documentation for models is in <em>/acedocs/exploring/*.</em>  The table of contents is in <em>/acedocs/exploring/toc_models.html</em>.  Unfortunately, like all the ACEDB documentation, it uses absolute pathnames.  We have converted these pathnames to relative ones, and will make the document available for download on the Spatial Focus private web page.  Although the document is marked "draft" and dated 1994, it is thorough and simple.  Doesn't appear to be significantly out of date.</p>
+diff -burN AcePerl-1.86.orig/examples/authors.pl AcePerl-1.86/examples/authors.pl
+--- AcePerl-1.86.orig/examples/authors.pl	Thu Jul  8 21:23:59 1999
++++ AcePerl-1.86/examples/authors.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull some information on various authors
+ # from the C. Elegans ACEDB.
+diff -burN AcePerl-1.86.orig/examples/authors2.pl AcePerl-1.86/examples/authors2.pl
+--- AcePerl-1.86.orig/examples/authors2.pl	Thu Jul  8 21:23:59 1999
++++ AcePerl-1.86/examples/authors2.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull some information on various authors
+ # from the C. Elegans ACEDB.
+diff -burN AcePerl-1.86.orig/examples/coauthors.pl AcePerl-1.86/examples/coauthors.pl
+--- AcePerl-1.86.orig/examples/coauthors.pl	Thu Jul  8 21:23:59 1999
++++ AcePerl-1.86/examples/coauthors.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use lib '..';
+ use Ace;
+diff -burN AcePerl-1.86.orig/examples/exons.pl AcePerl-1.86/examples/exons.pl
+--- AcePerl-1.86.orig/examples/exons.pl	Wed Jan 12 19:24:48 2000
++++ AcePerl-1.86/examples/exons.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull some information on a sequence
+ # from the C. Elegans ACEDB.
+diff -burN AcePerl-1.86.orig/examples/gif.pl AcePerl-1.86/examples/gif.pl
+--- AcePerl-1.86.orig/examples/gif.pl	Thu Jul  8 21:23:59 1999
++++ AcePerl-1.86/examples/gif.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use lib '..','../blib/lib','../blib/arch';
+ use Ace;
+diff -burN AcePerl-1.86.orig/examples/sequence.pl AcePerl-1.86/examples/sequence.pl
+--- AcePerl-1.86.orig/examples/sequence.pl	Thu Jul  8 21:23:59 1999
++++ AcePerl-1.86/examples/sequence.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull some information on a sequence
+ # from the C. Elegans ACEDB.
+diff -burN AcePerl-1.86.orig/examples/upstream.pl AcePerl-1.86/examples/upstream.pl
+--- AcePerl-1.86.orig/examples/upstream.pl	Wed Jan 12 19:24:48 2000
++++ AcePerl-1.86/examples/upstream.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull out N base pairs upstream of each predicted
+ # gene in C. elegans
+diff -burN AcePerl-1.86.orig/examples/upstream2.pl AcePerl-1.86/examples/upstream2.pl
+--- AcePerl-1.86.orig/examples/upstream2.pl	Wed Jan 12 19:24:48 2000
++++ AcePerl-1.86/examples/upstream2.pl	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull out N base pairs upstream of each predicted
+ # gene in C. elegans
+diff -burN AcePerl-1.86.orig/make_docs.PLS AcePerl-1.86/make_docs.PLS
+--- AcePerl-1.86.orig/make_docs.PLS	Thu Nov 14 21:00:05 2002
++++ AcePerl-1.86/make_docs.PLS	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use Pod::Html;
+ $marker = shift;
+diff -burN AcePerl-1.86.orig/t/basic.t AcePerl-1.86/t/basic.t
+--- AcePerl-1.86.orig/t/basic.t	Sat Feb  1 20:35:12 2003
++++ AcePerl-1.86/t/basic.t	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl -w
+ 
+ # Low level tests of connectivity
+ ######################### We start with some black magic to print on failure.
+diff -burN AcePerl-1.86.orig/t/sequence.t AcePerl-1.86/t/sequence.t
+--- AcePerl-1.86.orig/t/sequence.t	Wed Apr  9 23:01:55 2003
++++ AcePerl-1.86/t/sequence.t	Thu Jul 24 17:09:49 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl -w
+ 
+ 
+ # Tests of Ace::Sequence and Ace::Sequence::Feature
+diff -burN AcePerl-1.86.orig/t/update.t AcePerl-1.86/t/update.t
+--- AcePerl-1.86.orig/t/update.t	Wed Apr  9 23:01:55 2003
++++ AcePerl-1.86/t/update.t	Thu Jul 24 17:09:48 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl -w
+ 
+ # Tests of object-level fetches and following
+ ######################### We start with some black magic to print on failure.
