@@ -2,12 +2,12 @@
 Summary:	AcePerl perl module
 Summary(pl):	Modu³ perla AcePerl
 Name:		perl-AcePerl
-Version:	1.86
+Version:	1.87
 Release:	0.1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
-# Source0-md5:	133664b68a2a97c9f3c8cd7096ba472b
+# Source0-md5:	e42bc9b26c34ff9604c30d103d445818
 Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
 BuildRequires:	perl-devel >= 5.6
