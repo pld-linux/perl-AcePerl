@@ -25,8 +25,8 @@ AcePerl umo¿liwia dostêp do obiektowej bazy danych ACEDB.
 
 %build
 echo "3" | perl Makefile.PL
-%{__make} OPTIMIZE="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}" \
-	COMPILER="%{__cc} -DACEDB4 %{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} OPTIMIZE="%{rpmcflags}" \
+	COMPILER="%{__cc} -DACEDB4 %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
