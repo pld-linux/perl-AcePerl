@@ -17,8 +17,8 @@
 -  $cgi_path  ||= '/usr/local/apache/cgi-bin/ace';
 -  $html_path ||= '/usr/local/apache/htdocs/ace';
 +  $conf_path ||= '/etc/httpd/ace';
-+  $cgi_path  ||= '/home/httpd/cgi-bin/ace';
-+  $html_path ||= '/home/httpd/html/ace';
++  $cgi_path  ||= '/home/services/httpd/cgi-bin/ace';
++  $html_path ||= '/home/services/httpd/html/ace';
  
    get_path("site-specific configuration files",\$conf_path);
    get_path("acebrowser CGI scripts",\$cgi_path);
