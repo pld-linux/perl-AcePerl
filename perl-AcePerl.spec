@@ -3,7 +3,7 @@ Summary:	AcePerl perl module
 Summary(pl):	Modu³ perla AcePerl
 Name:		perl-AcePerl
 Version:	1.67
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
@@ -36,7 +36,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install examples/* $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}-%{version}
+install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 gzip -9nf ChangeLog README
 
