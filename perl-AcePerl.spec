@@ -15,6 +15,7 @@ Patch1:		%{name}-path.patch
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-GD
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
