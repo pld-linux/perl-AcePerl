@@ -9,8 +9,8 @@ Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Ace/AcePerl-%{version}.tar.gz
 Patch:		perl-AcePerl-paths.patch
-BuildRequires:	rpm-perlprov
-BuildRequires:	perl >= 5.005_03-12
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -56,6 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc {ChangeLog,README}.gz
 
 %{perl_sitearch}/Ace.pm
+
+%dir %{perl_sitearch}/Ace
 %{perl_sitearch}/Ace/*.pm
 
 %dir %{perl_sitearch}/auto/Ace
@@ -66,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/auto/Ace/Ace.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Ace/Ace.so
 
-%dir /usr/src/examples/%{name}-%{version}
-%attr(755,root,root) /usr/src/examples/%{name}-%{version}/*.pl
+/usr/src/examples/%{name}-%{version}
 
 %{_mandir}/man3/*
