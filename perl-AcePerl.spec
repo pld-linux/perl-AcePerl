@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	AcePerl perl module
-Summary(pl):	Modu³ perla AcePerl
+Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
+Summary(pl):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
 Version:	1.87
 Release:	0.1
@@ -18,20 +18,36 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 AcePerl provides an interface to the ACEDB object-oriented database.
+Designed specifically for use in genome sequencing projects, ACEDB
+provides powerful modeling and management services for biological and
+laboratory data.  For others, it is a good open source introduction to
+the world of object-oriented databases.
 
 %description -l pl
-AcePerl umo¿liwia dostêp do obiektowej bazy danych ACEDB.
+AcePerl umo¿liwia dostêp do obiektowej bazy danych ACEDB. Zosta³
+zaprojektowany dla projektów dotycz±cych genomów. ACEDB udostêpnia
+potê¿ne us³ugi modelowania i zarz±dzania danymi biologicznymi i
+laboratoryjnymi. Ponadto, jest on dobrym wprowadzeniem otwartego
+oprogramowania w swiat baz obiektowych.
 
 %package -n perl-AceBrowser
-Summary:	AceBrowser perl module
-Summary(pl):	Modu³ perla AceBrowser
+Summary:	AceBrowser - collection of CGI scripts providing interface to ACEDB
+Summary(pl):	AceBrowser - zbiór skryptów CGI stanowi±cych interfejs do ACEDB
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 Requires:	apache
 
 %description -n perl-AceBrowser
+AceBrowser is a collection of CGI scripts that run on top of AcePerl
+to provide a simple browsable interface to ACEDB databases.  Some of
+the code has been tuned for the C. elegans database, but most of it is
+fully generic.
 
 %description -n perl-AceBrowser -l pl
+AceBrowser jest zbiorem skryptów CGI, dzia³aj±cych w oparciu o AcePerl
+i stanowi±cych prosty interfejs do baz danych ACEDB. Czê¶æ kodu
+zoptymalizowano dla bazy danych C. elegans, lecz wiêkszo¶æ jest
+ogólna.
 
 %prep
 %setup -q -n AcePerl-%{version}
