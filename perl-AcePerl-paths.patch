@@ -1,0 +1,48 @@
+--- AcePerl-1.54/examples/ace.pl	Tue Oct 20 21:56:33 1998
++++ AcePerl-1.54.new/examples/ace.pl	Fri Oct  1 01:09:54 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # Simple interface to acedb.
+ # Uses readline for command-line editing if available.
+--- AcePerl-1.54/examples/authors.pl	Mon Sep 14 22:25:41 1998
++++ AcePerl-1.54.new/examples/authors.pl	Fri Oct  1 01:10:01 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull some information on various authors
+ # from the C. Elegans ACEDB.
+--- AcePerl-1.54/examples/authors2.pl	Mon Sep 14 22:25:41 1998
++++ AcePerl-1.54.new/examples/authors2.pl	Fri Oct  1 01:10:07 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull some information on various authors
+ # from the C. Elegans ACEDB.
+--- AcePerl-1.54/examples/coauthors.pl	Mon Sep 14 22:25:41 1998
++++ AcePerl-1.54.new/examples/coauthors.pl	Fri Oct  1 01:10:12 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use lib '..';
+ use Ace;
+--- AcePerl-1.54/examples/gif.pl	Mon Sep 14 22:25:41 1998
++++ AcePerl-1.54.new/examples/gif.pl	Fri Oct  1 01:10:18 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use lib '..','../blib/lib','../blib/arch';
+ use Ace;
+--- AcePerl-1.54/examples/sequence.pl	Fri Oct  9 15:26:51 1998
++++ AcePerl-1.54.new/examples/sequence.pl	Fri Oct  1 01:10:23 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This example will pull some information on a sequence
+ # from the C. Elegans ACEDB.
