@@ -37,7 +37,7 @@ install -d $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}-%{version}
 
 install examples/* $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}-%{version}
 
-strip --strip-unneeded $RPM_BUILD_ROOT/%{perl_sitearch}/auto/Ace/*.so
+strip --strip-unneeded $RPM_BUILD_ROOT/%{perl_sitearch}/auto/Ace/Freesubs/*.so
 
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/Ace
@@ -56,17 +56,22 @@ rm -rf $RPM_BUILD_ROOT
 %doc {ChangeLog,README}.gz
 
 %{perl_sitearch}/Ace.pm
+%{perl_sitearch}/GFF
 
 %dir %{perl_sitearch}/Ace
 %{perl_sitearch}/Ace/*.pm
+%dir %{perl_sitearch}/Ace/Sequence
+%{perl_sitearch}/Ace/Sequence/*.pm
 
 %dir %{perl_sitearch}/auto/Ace
-%{perl_sitearch}/auto/Ace/Object
 %{perl_sitearch}/auto/Ace/*.al
 %{perl_sitearch}/auto/Ace/autosplit.ix
 %{perl_sitearch}/auto/Ace/.packlist
-%{perl_sitearch}/auto/Ace/Ace.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Ace/Ace.so
+%dir %{perl_sitearch}/auto/Ace/Freesubs
+%{perl_sitearch}/auto/Ace/Freesubs/Freesubs.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Ace/Freesubs/Freesubs.so
+%{perl_sitearch}/auto/Ace/Object
+%{perl_sitearch}/auto/Ace/Sequence
 
 %{_prefix}/src/examples/%{name}-%{version}
 
