@@ -2,15 +2,16 @@
 Summary:	AcePerl perl module
 Summary(pl):	Modu³ perla AcePerl
 Name:		perl-AcePerl
-Version:	1.64
+Version:	1.67
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
+Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Ace/AcePerl-%{version}.tar.gz
-Patch0:		%{name}-paths.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl-Digest-MD5
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -23,30 +24,21 @@ AcePerl umo¿liwia dostêp do obiektowej bazy danych ACEDB.
 
 %prep
 %setup -q -n AcePerl-%{version}
-%patch -p1
 
 %build
-perl Makefile.PL
-%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
+echo "3" | perl Makefile.PL
+%{__make} OPTIMIZE="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}" \
+	COMPILER="%{__cc} -DACEDB4 %{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}-%{version}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install examples/* $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}-%{version}
 
-strip --strip-unneeded $RPM_BUILD_ROOT/%{perl_sitearch}/auto/Ace/Freesubs/*.so
-
-(
-  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/Ace
-  sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-  mv -f .packlist.new .packlist
-)
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
-        ChangeLog README
+gzip -9nf ChangeLog README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,13 +58,12 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Ace
 %{perl_sitearch}/auto/Ace/*.al
 %{perl_sitearch}/auto/Ace/autosplit.ix
-%{perl_sitearch}/auto/Ace/.packlist
 %dir %{perl_sitearch}/auto/Ace/Freesubs
 %{perl_sitearch}/auto/Ace/Freesubs/Freesubs.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Ace/Freesubs/Freesubs.so
 %{perl_sitearch}/auto/Ace/Object
 %{perl_sitearch}/auto/Ace/Sequence
 
-%{_prefix}/src/examples/%{name}-%{version}
+%{_examplesdir}/%{name}-%{version}
 
 %{_mandir}/man3/*
