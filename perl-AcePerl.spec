@@ -36,7 +36,7 @@ Requires:	apache
 
 %build
 # Makefile.PL does not read from non-terminal stdin
-perl Makefile.PL < /dev/null
+%{__perl} Makefile.PL < /dev/null
 %{__make} OPTIMIZE="%{rpmcflags}" \
 	COMPILER="%{__cc} -DACEDB4 %{rpmcflags}"
 
