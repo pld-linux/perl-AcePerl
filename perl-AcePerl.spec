@@ -4,11 +4,11 @@ Summary(pl):	Modu³ perla AcePerl
 Name:		perl-AcePerl
 Version:	1.54
 Release:	3
-Copyright:	GPL
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Ace/AcePerl-%{version}.tar.gz
-Patch:		perl-AcePerl-paths.patch
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Ace/AcePerl-%{version}.tar.gz
+Patch0:		perl-AcePerl-paths.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
@@ -31,11 +31,11 @@ make OPTIMIZE="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}-%{version}
+install -d $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}-%{version}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-install examples/* $RPM_BUILD_ROOT/usr/src/examples/%{name}-%{version}
+install examples/* $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}-%{version}
 
 strip --strip-unneeded $RPM_BUILD_ROOT/%{perl_sitearch}/auto/Ace/*.so
 
@@ -68,6 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/auto/Ace/Ace.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Ace/Ace.so
 
-/usr/src/examples/%{name}-%{version}
+%{_prefix}/src/examples/%{name}-%{version}
 
 %{_mandir}/man3/*
