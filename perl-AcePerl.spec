@@ -40,7 +40,7 @@ Requires:	apache
 %build
 # Makefile.PL does not read from non-terminal stdin
 %{__perl} Makefile.PL < /dev/null \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}" \
 	COMPILER="%{__cc} -DACEDB4 %{rpmcflags}"
 cd RPC
