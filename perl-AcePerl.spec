@@ -4,7 +4,8 @@ Summary(pl):	Modu³ perla AcePerl
 Name:		perl-AcePerl
 Version:	1.87
 Release:	0.1
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
 # Source0-md5:	e42bc9b26c34ff9604c30d103d445818
