@@ -1,4 +1,5 @@
 %include	/usr/lib/rpm/macros.perl
+%define	pdir	Ace
 Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
 Summary(pl):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
@@ -7,7 +8,7 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/AcePerl-%{version}.tar.gz
 # Source0-md5:	e42bc9b26c34ff9604c30d103d445818
 Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
