@@ -3,14 +3,14 @@ Summary:	AcePerl perl module
 Summary(pl):	Modu³ perla AcePerl
 Name:		perl-AcePerl
 Version:	1.83
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
 Patch0:		%{name}-defaults.patch
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Digest-MD5
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,7 +36,8 @@ Requires:	apache
 
 %build
 # Makefile.PL does not read from non-terminal stdin
-%{__perl} Makefile.PL < /dev/null
+%{__perl} Makefile.PL < /dev/null \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags}" \
 	COMPILER="%{__cc} -DACEDB4 %{rpmcflags}"
 
@@ -55,11 +56,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README DISCLAIMER.txt
-%{perl_sitearch}/Ace.pm
-%dir %{perl_sitearch}/Ace
-%{perl_sitearch}/Ace/[^B]*
-%{perl_sitearch}/GFF
-%{perl_sitearch}/auto/Ace
+%{perl_vendorarch}/Ace.pm
+%dir %{perl_vendorarch}/Ace
+%{perl_vendorarch}/Ace/[^B]*
+%{perl_vendorarch}/GFF
+%{perl_vendorarch}/auto/Ace
 %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/Ace.3pm*
 %{_mandir}/man3/Ace::[^B]*
@@ -70,5 +71,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/httpd/ace
 %dir /home/httpd/cgi-bin/ace
 %dir /home/httpd/html/ace
-%{perl_sitearch}/Ace/Browser
+%{perl_vendorarch}/Ace/Browser
 %{_mandir}/man3/Ace::B*
