@@ -7,6 +7,7 @@ Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
+# Source0-md5:	d1cc9e852ce7fb23a0f2eac739b040fb
 Patch0:		%{name}-defaults.patch
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	perl-Digest-MD5
