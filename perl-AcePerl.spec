@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 AcePerl provides an interface to the ACEDB object-oriented database.
 Designed specifically for use in genome sequencing projects, ACEDB
 provides powerful modeling and management services for biological and
-laboratory data.  For others, it is a good open source introduction to
+laboratory data. For others, it is a good open source introduction to
 the world of object-oriented databases.
 
 %description -l pl
@@ -41,7 +41,7 @@ Requires:	apache
 
 %description -n perl-AceBrowser
 AceBrowser is a collection of CGI scripts that run on top of AcePerl
-to provide a simple browsable interface to ACEDB databases.  Some of
+to provide a simple browsable interface to ACEDB databases. Some of
 the code has been tuned for the C. elegans database, but most of it is
 fully generic.
 
