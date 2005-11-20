@@ -37,7 +37,7 @@ Summary:	AceBrowser - collection of CGI scripts providing interface to ACEDB
 Summary(pl):	AceBrowser - zbiór skryptów CGI stanowi±cych interfejs do ACEDB
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
-Requires:	apache
+Requires:	webserver = apache
 
 %description -n perl-AceBrowser
 AceBrowser is a collection of CGI scripts that run on top of AcePerl
