@@ -1,0 +1,6 @@
+- updated to 1.86
+- use %{perl_vendorlib} instead of %{perl_vendorarch}
+- added ace.pl (and its manpage) (doesn't work though)
+- build and install RPC and Freesubs (required by ace.pl)
+- added -path.patch (s#/usr/local/bin#/usr/bin#)
+- builds, not tested too much
