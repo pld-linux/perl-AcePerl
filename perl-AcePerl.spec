@@ -3,13 +3,13 @@
 Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
 Summary(pl):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
-Version:	1.87
-Release:	2
+Version:	1.89
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/AcePerl-%{version}.tar.gz
-# Source0-md5:	e42bc9b26c34ff9604c30d103d445818
+# Source0-md5:	547da3ca59894e99448408cfe9a8ae6e
 Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
 BuildRequires:	cpp
@@ -93,6 +93,10 @@ cd ..
 
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/httpd,/home/services/httpd/{cgi-bin,html}}/ace
+rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Ace/.packlist
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Ace/Freesubs/.packlist
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Ace/RPC/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
