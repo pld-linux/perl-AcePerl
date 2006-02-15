@@ -12,6 +12,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/AcePerl-%{version}.tar.gz
 # Source0-md5:	e42bc9b26c34ff9604c30d103d445818
 Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
+BuildRequires:	cpp
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
