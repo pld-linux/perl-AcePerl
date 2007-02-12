@@ -1,7 +1,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Ace
 Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
-Summary(pl):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
+Summary(pl.UTF-8):   AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
 Version:	1.89
 Release:	1
@@ -26,16 +26,16 @@ provides powerful modeling and management services for biological and
 laboratory data. For others, it is a good open source introduction to
 the world of object-oriented databases.
 
-%description -l pl
-AcePerl umo¿liwia dostêp do obiektowej bazy danych ACEDB. Zosta³
-zaprojektowany dla projektów dotycz±cych genomów. ACEDB udostêpnia
-potê¿ne us³ugi modelowania i zarz±dzania danymi biologicznymi i
+%description -l pl.UTF-8
+AcePerl umoÅ¼liwia dostÄ™p do obiektowej bazy danych ACEDB. ZostaÅ‚
+zaprojektowany dla projektÃ³w dotyczÄ…cych genomÃ³w. ACEDB udostÄ™pnia
+potÄ™Å¼ne usÅ‚ugi modelowania i zarzÄ…dzania danymi biologicznymi i
 laboratoryjnymi. Ponadto, jest on dobrym wprowadzeniem otwartego
 oprogramowania w swiat baz obiektowych.
 
 %package -n perl-AceBrowser
 Summary:	AceBrowser - collection of CGI scripts providing interface to ACEDB
-Summary(pl):	AceBrowser - zbiór skryptów CGI stanowi±cych interfejs do ACEDB
+Summary(pl.UTF-8):   AceBrowser - zbiÃ³r skryptÃ³w CGI stanowiÄ…cych interfejs do ACEDB
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 Requires:	webserver = apache
@@ -46,11 +46,11 @@ to provide a simple browsable interface to ACEDB databases. Some of
 the code has been tuned for the C. elegans database, but most of it is
 fully generic.
 
-%description -n perl-AceBrowser -l pl
-AceBrowser jest zbiorem skryptów CGI, dzia³aj±cych w oparciu o AcePerl
-i stanowi±cych prosty interfejs do baz danych ACEDB. Czê¶æ kodu
-zoptymalizowano dla bazy danych C. elegans, lecz wiêkszo¶æ jest
-ogólna.
+%description -n perl-AceBrowser -l pl.UTF-8
+AceBrowser jest zbiorem skryptÃ³w CGI, dziaÅ‚ajÄ…cych w oparciu o AcePerl
+i stanowiÄ…cych prosty interfejs do baz danych ACEDB. CzÄ™Å›Ä‡ kodu
+zoptymalizowano dla bazy danych C. elegans, lecz wiÄ™kszoÅ›Ä‡ jest
+ogÃ³lna.
 
 %prep
 %setup -q -n AcePerl-%{version}
