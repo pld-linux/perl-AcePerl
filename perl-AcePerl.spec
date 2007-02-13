@@ -1,7 +1,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Ace
 Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
-Summary(pl.UTF-8):   AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
+Summary(pl.UTF-8):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
 Version:	1.89
 Release:	1
@@ -35,7 +35,7 @@ oprogramowania w swiat baz obiektowych.
 
 %package -n perl-AceBrowser
 Summary:	AceBrowser - collection of CGI scripts providing interface to ACEDB
-Summary(pl.UTF-8):   AceBrowser - zbiór skryptów CGI stanowiących interfejs do ACEDB
+Summary(pl.UTF-8):	AceBrowser - zbiór skryptów CGI stanowiących interfejs do ACEDB
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 Requires:	webserver = apache
