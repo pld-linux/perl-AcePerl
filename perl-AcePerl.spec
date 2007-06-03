@@ -8,10 +8,11 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/AcePerl-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
 # Source0-md5:	f473592d51f016ca4fe8efcf049e8b94
 Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
+URL:		http://search.cpan.org/dist/AcePerl/
 BuildRequires:	cpp
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-devel >= 1:5.8.0
