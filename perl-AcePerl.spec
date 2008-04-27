@@ -4,7 +4,7 @@ Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
 Summary(pl.UTF-8):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
 Version:	1.91
-Release:	3
+Release:	4
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -63,21 +63,18 @@ ogólna.
 %{__perl} Makefile.PL < /dev/null \
 	INSTALLDIRS=vendor
 %{__make} \
-	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}" \
 	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC"
 cd RPC
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
-	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}" \
 	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC"
 cd ../Freesubs
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
-	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}" \
 	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC"
 
