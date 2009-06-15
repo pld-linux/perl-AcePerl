@@ -3,13 +3,13 @@
 Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
 Summary(pl.UTF-8):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
 Name:		perl-AcePerl
-Version:	1.91
-Release:	4
+Version:	1.92
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
-# Source0-md5:	f473592d51f016ca4fe8efcf049e8b94
+# Source0-md5:	485e54655a15d8dc5c471fed07092414
 Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
 URL:		http://search.cpan.org/dist/AcePerl/
