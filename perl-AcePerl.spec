@@ -117,10 +117,8 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Ace/*.pm
 %dir %{perl_vendorarch}/auto/Ace
 %dir %{perl_vendorarch}/auto/Ace/Freesubs
-%{perl_vendorarch}/auto/Ace/Freesubs/Freesubs.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Ace/Freesubs/Freesubs.so
 %dir %{perl_vendorarch}/auto/Ace/RPC
-%{perl_vendorarch}/auto/Ace/RPC/RPC.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Ace/RPC/RPC.so
 %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man1/ace.pl*
