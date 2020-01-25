@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Ace
 Summary:	AcePerl - Perl interface for the ACEDB object-oriented database
 Summary(pl.UTF-8):	AcePerl - interfejs perlowy do obiektowej bazy danych ACEDB
