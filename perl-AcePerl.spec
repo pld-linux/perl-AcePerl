@@ -54,7 +54,7 @@ ogólna.
 
 %prep
 %setup -q -n AcePerl-%{version}
-%patch0 -p0
+%patch0 -p1
 %patch1 -p1
 
 %build
