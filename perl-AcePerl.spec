@@ -13,11 +13,16 @@ Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
 URL:		http://search.cpan.org/dist/AcePerl/
 BuildRequires:	cpp
+BuildRequires:	libtirpc-devel
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	pkgconfig
+BuildRequires:	rpcsvc-proto
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-GD
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		tirpccflags	%(pkg-config --cflags libtirpc)
 
 %description
 AcePerl provides an interface to the ACEDB object-oriented database.
@@ -71,7 +76,7 @@ cd RPC
 %{__make} -C ../acelib rpcace.h
 %{__make} \
 	OPTIMIZE="%{rpmcflags}" \
-	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC"
+	COMPILER="%{__cc} -DACEDB4 %{rpmcflags} -fPIC %{tirpccflags}"
 cd ../Freesubs
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
