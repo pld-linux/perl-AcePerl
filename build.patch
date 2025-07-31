@@ -1,0 +1,14 @@
+--- AcePerl-1.92/RPC/RPC.xs.orig	2000-06-13 19:17:19.000000000 +0200
++++ AcePerl-1.92/RPC/RPC.xs	2025-07-31 02:01:18.953122777 +0200
+@@ -153,11 +153,7 @@
+ 	break;
+     case '_':
+ 	if (strEQ(name, "_ACECLIENT_"))
+-#ifdef _ACECLIENT_
+-	    return _ACECLIENT_;
+-#else
+ 	    goto not_there;
+-#endif
+ 	break;
+     }
+     errno = EINVAL;

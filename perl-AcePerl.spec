@@ -11,6 +11,7 @@ Source0:	http://www.cpan.org/modules/by-module/Ace/AcePerl-%{version}.tar.gz
 # Source0-md5:	485e54655a15d8dc5c471fed07092414
 Patch0:		%{name}-defaults.patch
 Patch1:		%{name}-path.patch
+Patch2:		build.patch
 URL:		http://search.cpan.org/dist/AcePerl/
 BuildRequires:	cpp
 BuildRequires:	libtirpc-devel
@@ -61,6 +62,7 @@ ogólna.
 %setup -q -n AcePerl-%{version}
 %patch -P0 -p1
 %patch -P1 -p1
+%patch -P2 -p1
 
 %build
 # Makefile.PL does not read from non-terminal stdin
